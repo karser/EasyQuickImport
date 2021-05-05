@@ -1,0 +1,2 @@
+customerFullName,firstName,lastName,companyName,terms,currency,addr1,addr2,city,state,postalcode,country
+HomeBase,Long,Allen,"HomeBase LLC","Due on receipt","US Dollar","4420 Shadowmar Drive",Louisiana,"New Orleans",LA,70112,"United States"

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<?qbxml version="13.0"?>
+			<QBXML>
+				<QBXMLMsgsRq onError="continueOnError">
+				<CustomerAddRq>
+	<CustomerAdd>
+		<Name>Acme Inc.</Name>
+		<CompanyName>Acme Inc.</CompanyName>
+		<FirstName>John</FirstName>
+		<LastName>Tulchin</LastName>
+		<BillAddress>
+			<Addr1>56 Cowles Road</Addr1>
+			<City>Willington</City>
+			<State>CT</State>
+			<PostalCode>06279</PostalCode>
+			<Country>United States</Country>
+		</BillAddress>
+		<CurrencyRef>
+			<FullName>US Dollar</FullName>
+		</CurrencyRef>
+	</CustomerAdd>
+</CustomerAddRq>
+
+				</QBXMLMsgsRq>
+            </QBXML>

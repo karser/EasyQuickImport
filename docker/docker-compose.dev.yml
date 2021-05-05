@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+  php:
+    image: ${REGISTRY_IMAGE}/app_php:${TAG}
+    extra_hosts:
+      - 'db:${DATABASE_HOST}'
+#    environment:
+#      - DATABASE_URL=mysql://easyquickimport:hsPxn6ntuFb9rUWvb@mysql:3306/easyquickimport?serverVersion=mariadb-10.2.22
+    networks:
+      - backend
+    volumes:
+      - ${APPLICATION}:/var/www/app
+#
+#  mysql:
+#    image: leafney/alpine-mariadb:10.2.22
+#    environment:
+#      - MYSQL_ROOT_PWD=hsPxn6ntuFb9rUWvb
+#      - MYSQL_USER=easyquickimport
+#      - MYSQL_USER_PWD=hsPxn6ntuFb9rUWvb
+#      - MYSQL_USER_DB=easyquickimport
+#    ports:
+#      - '3339:3306'
+#    networks:
+#      - backend
+
+  nginx:
+    image: ${REGISTRY_IMAGE}/app_nginx:${TAG}
+    depends_on:
+      - php
+    ports:
+      - '8083:80'
+    networks:
+      - backend
+    volumes:
+      - ${APPLICATION}:/var/www/app
+
+networks:
+  backend:

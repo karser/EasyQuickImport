@@ -1,0 +1,28 @@
+{% extends 'admin.html.twig' %}
+
+{% form_theme schedule_accounts_update_form with easyadmin_config('design.form_theme') %}
+
+{% block content_title %}Scheduling{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div>
+            <div class="col">
+                <section class="content-header ">
+                    <div class="d-flex flex-row justify-content-between align-content-center w-100">
+                        <div class="content-header-title">
+                            <h1 class="title">Schedule accounts update</h1>
+                        </div>
+
+                        <div class="global-actions"></div>
+                    </div>
+                </section>
+                <section id="main" class="content-body">
+                    {{ form(schedule_accounts_update_form) }}
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

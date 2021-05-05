@@ -1,0 +1,87 @@
+easy_admin:
+    site_name: '%env(resolve:APP_NAME)%'
+    design:
+        menu:
+            - { label: 'Documentation', url: '/documentation' }
+            - { label: 'Scheduling', url: '/scheduling/schedule', permission: 'ROLE_ADMIN' }
+            - { label: 'New Import', url: '/import/create' }
+            - { entity: 'QuickbooksCompany' }
+            - { entity: 'QuickbooksQueue' }
+            - { entity: 'QuickbooksAccount' }
+    entities:
+        QuickbooksCompany:
+            class: App\Entity\QuickbooksCompany
+            label: 'Company'
+            list:
+                actions:
+                    - { label: 'QWC File', name: 'downloadQbwcConfig', icon: 'download'}
+                    - { label: 'Sync Accounts', name: 'syncAccounts', icon: 'refresh'}
+                fields:
+                    - 'companyName'
+                    - 'qbUsername'
+                    - { property: 'baseCurrency', label: 'Base currency' }
+            form:
+                fields:
+                    - { property: 'companyName', label: 'Company Name', help: 'Specify short name of your company' }
+                    - type: 'section'
+                      label: 'Define a new password'
+                      help: >
+                          This password you will need to enter in Quickbooks Web Connector
+                    - { property: 'qbPlainPassword', label: 'Password', type: 'password', help: 'You can not see the password after it is set' }
+                    - type: 'section'
+                      label: 'Set the base currency'
+                      help: >
+                          If you are not using multicurrency just leave it as US Dollar.
+                    - property: 'baseCurrency'
+                      label: 'Base currency'
+                      help: 'Used for calculating exchange rate for the given txnDate when the currency differs from the home one'
+                    - type: 'section'
+                      label: 'Multi-tenancy (multiple companies on the same computer)'
+                      help: >
+                          Allows to restrict import to a particular company, so other companies will be rejected.
+                          You can leave this field empty. It will be set automatically on the first data exchange.
+                    - { property: 'qbCompanyFile', label: 'Company file', help: 'e.g: C:\Users\Public\Documents\Intuit\QuickBooks\Company Files\your-company-file.qbw' }
+
+        QuickbooksQueue:
+            class: App\Entity\QuickbooksQueue
+            label: 'Queue'
+            disabled_actions: ['new', 'edit']
+            list:
+                actions: ['show']
+                batch_actions:
+                    - { name: 'delete', ask_confirm: true }
+                fields:
+                    - { property: 'ident', label: 'Identifier' }
+                    - { property: 'companyName', label: 'Company Name' }
+                    - { property: 'qbAction', label: 'Action' }
+                    - { property: 'statusLabel', label: 'Status' }
+                    - { property: 'msg', label: 'Message' }
+                    - { property: 'enqueueDatetime', label: 'Scheduled At' }
+                    - { property: 'dequeueDatetime', label: 'Processed At' }
+            show:
+                fields:
+                    - { property: 'ident', label: 'Identifier' }
+                    - { property: 'companyName', label: 'Company Name' }
+                    - { property: 'qbAction', label: 'Action' }
+                    - { property: 'statusLabel', label: 'Status' }
+                    - { property: 'msg', label: 'Message' }
+                    - { property: 'qbxml', label: 'XML' }
+                    - { property: 'enqueueDatetime', label: 'Scheduled At' }
+                    - { property: 'dequeueDatetime', label: 'Processed At' }
+
+        QuickbooksAccount:
+            class: App\Entity\QuickbooksAccount
+            label: 'Chart Of Accounts'
+            disabled_actions: ['new', 'edit']
+            list:
+                actions: ['show']
+                batch_actions:
+                    - { name: 'delete', ask_confirm: true }
+                fields:
+                    - { property: 'id', label: 'ID' }
+                    - { property: 'companyName', label: 'Company Name' }
+                    - 'fullName'
+                    - 'currency'
+                    - 'accountType'
+                    - 'specialAccountType'
+                    - 'accountNumber'

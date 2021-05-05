@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<QBXML>
+    <QBXMLMsgsRs>
+        <AccountQueryRs requestID="1" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+            <AccountRet>
+                <ListID>80000028-1560778874</ListID>
+                <TimeCreated>2019-06-17T06:41:14-08:00</TimeCreated>
+                <TimeModified>2019-07-22T11:03:01-08:00</TimeModified>
+                <EditSequence>1560778874</EditSequence>
+                <Name>Bank EUR</Name>
+                <FullName>Bank EUR</FullName>
+                <IsActive>true</IsActive>
+                <Sublevel>0</Sublevel>
+                <AccountType>Bank</AccountType>
+                <Balance>0.00</Balance>
+                <TotalBalance>0.00</TotalBalance>
+                <TaxLineInfoRet>
+                    <TaxLineID>1864</TaxLineID>
+                    <TaxLineName>B/S-Assets: Cash</TaxLineName>
+                </TaxLineInfoRet>
+                <CashFlowClassification>NotApplicable</CashFlowClassification>
+                <CurrencyRef>
+                    <ListID>80000033-1560777868</ListID>
+                    <FullName>Euro</FullName>
+                </CurrencyRef>
+            </AccountRet>
+            <AccountRet>
+                <ListID>80000027-1560778661</ListID>
+                <TimeCreated>2019-06-17T06:37:41-08:00</TimeCreated>
+                <TimeModified>2019-07-22T11:03:15-08:00</TimeModified>
+                <EditSequence>1560778661</EditSequence>
+                <Name>Bank USD</Name>
+                <FullName>Bank USD</FullName>
+                <IsActive>true</IsActive>
+                <Sublevel>0</Sublevel>
+                <AccountType>Bank</AccountType>
+                <Balance>0.00</Balance>
+                <TotalBalance>0.00</TotalBalance>
+                <TaxLineInfoRet>
+                    <TaxLineID>1864</TaxLineID>
+                    <TaxLineName>B/S-Assets: Cash</TaxLineName>
+                </TaxLineInfoRet>
+                <CashFlowClassification>NotApplicable</CashFlowClassification>
+                <CurrencyRef>
+                    <ListID>80000096-1560777869</ListID>
+                    <FullName>US Dollar</FullName>
+                </CurrencyRef>
+            </AccountRet>
+            <AccountRet>
+                <ListID>8000002D-1560783117</ListID>
+                <TimeCreated>2019-06-17T07:51:57-08:00</TimeCreated>
+                <TimeModified>2019-06-17T07:51:57-08:00</TimeModified>
+                <EditSequence>1560783117</EditSequence>
+                <Name>Accounts Receivable</Name>
+                <FullName>Accounts Receivable</FullName>
+                <IsActive>true</IsActive>
+                <Sublevel>0</Sublevel>
+                <AccountType>AccountsReceivable</AccountType>
+                <SpecialAccountType>AccountsReceivable</SpecialAccountType>
+                <AccountNumber>11000</AccountNumber>
+                <Desc>Unpaid or unapplied customer invoices and credits</Desc>
+                <Balance>0.00</Balance>
+                <TotalBalance>0.00</TotalBalance>
+                <CashFlowClassification>Operating</CashFlowClassification>
+                <CurrencyRef>
+                    <ListID>8000003F-1560777868</ListID>
+                    <FullName>Hong Kong Dollar</FullName>
+                </CurrencyRef>
+            </AccountRet>
+            <AccountRet>
+                <ListID>8000002E-1560783173</ListID>
+                <TimeCreated>2019-06-17T07:52:53-08:00</TimeCreated>
+                <TimeModified>2019-07-21T07:06:24-08:00</TimeModified>
+                <EditSequence>1560783173</EditSequence>
+                <Name>Accounts Receivable - USD</Name>
+                <FullName>Accounts Receivable - USD</FullName>
+                <IsActive>true</IsActive>
+                <Sublevel>0</Sublevel>
+                <AccountType>AccountsReceivable</AccountType>
+                <SpecialAccountType>AccountsReceivable</SpecialAccountType>
+                <AccountNumber>11001</AccountNumber>
+                <Desc>Unpaid or unapplied customer invoices and credits</Desc>
+                <Balance>0.00</Balance>
+                <TotalBalance>0.00</TotalBalance>
+                <CashFlowClassification>Operating</CashFlowClassification>
+                <CurrencyRef>
+                    <ListID>80000096-1560777869</ListID>
+                    <FullName>US Dollar</FullName>
+                </CurrencyRef>
+            </AccountRet>
+        </AccountQueryRs>
+    </QBXMLMsgsRs>
+</QBXML>

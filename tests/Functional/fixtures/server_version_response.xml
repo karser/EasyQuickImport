@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+			<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+			 xmlns:ns1="http://developer.intuit.com/">
+				<SOAP-ENV:Body><ns1:serverVersionResponse><ns1:serverVersionResult>PHP QuickBooks SOAP Server v3.0 at /qbwc</ns1:serverVersionResult></ns1:serverVersionResponse>
+			</SOAP-ENV:Body>
+			</SOAP-ENV:Envelope>

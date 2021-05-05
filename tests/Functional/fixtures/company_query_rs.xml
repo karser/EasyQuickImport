@@ -1,0 +1,202 @@
+<?xml version="1.0" ?>
+<QBXML>
+    <QBXMLMsgsRs>
+        <HostQueryRs requestID="0" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+            <HostRet>
+                <ProductName>QuickBooks Desktop Pro 2019</ProductName>
+                <MajorVersion>29</MajorVersion>
+                <MinorVersion>0</MinorVersion>
+                <Country>US</Country>
+                <SupportedQBXMLVersion>1.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>1.1</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>2.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>2.1</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>3.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>4.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>4.1</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>5.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>6.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>7.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>8.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>9.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>10.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>11.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>12.0</SupportedQBXMLVersion>
+                <SupportedQBXMLVersion>13.0</SupportedQBXMLVersion>
+                <IsAutomaticLogin>false</IsAutomaticLogin>
+                <QBFileMode>SingleUser</QBFileMode>
+            </HostRet>
+        </HostQueryRs>
+        <CompanyQueryRs requestID="1" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+            <CompanyRet>
+                <IsSampleCompany>false</IsSampleCompany>
+                <CompanyName>Acme Inc</CompanyName>
+                <LegalCompanyName>Acme Inc</LegalCompanyName>
+                <FirstMonthFiscalYear>January</FirstMonthFiscalYear>
+                <FirstMonthIncomeTaxYear>January</FirstMonthIncomeTaxYear>
+                <CompanyType>ProfessionalConsulting</CompanyType>
+                <TaxForm>Form1040</TaxForm>
+                <SubscribedServices>
+                    <Service>
+                        <Name>QuickBooks Online Banking</Name>
+                        <Domain>banking.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Online Billing</Name>
+                        <Domain>billing.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Online Billing Level 1 Service</Name>
+                        <Domain>qbob1.qbn</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Online Billing Level 2 Service</Name>
+                        <Domain>qbob2.qbn</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Online Billing Payment Service</Name>
+                        <Domain>qbobpay.qbn</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Bill Payment</Name>
+                        <Domain>billpay.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Online Billing Paper Mailing Service</Name>
+                        <Domain>qbobpaper.qbn</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Payroll Service</Name>
+                        <Domain>payroll.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Basic Payroll Service</Name>
+                        <Domain>payrollbsc.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Basic Disk Payroll Service</Name>
+                        <Domain>payrollbscdisk.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Deluxe Payroll Service</Name>
+                        <Domain>payrolldlx.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>QuickBooks Premier Payroll Service</Name>
+                        <Domain>payrollprm.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>Basic Plus Federal</Name>
+                        <Domain>basic_plus_fed.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>Basic Plus Federal and State</Name>
+                        <Domain>basic_plus_fed_state.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>Basic Plus Direct Deposit</Name>
+                        <Domain>basic_plus_dd.qb</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                    <Service>
+                        <Name>Merchant Account Service</Name>
+                        <Domain>mas.qbn</Domain>
+                        <ServiceStatus>Never</ServiceStatus>
+                    </Service>
+                </SubscribedServices>
+                <AccountantCopy>
+                    <AccountantCopyExists>false</AccountantCopyExists>
+                </AccountantCopy>
+                <DataExtRet>
+                    <OwnerID>{0e102412-c367-403d-806f-28b2bea18297}</OwnerID>
+                    <DataExtName>AppLock</DataExtName>
+                    <DataExtType>STR255TYPE</DataExtType>
+                    <DataExtValue>LOCKED:WIN-OPFD9B31KJ1:637251322674318831</DataExtValue>
+                </DataExtRet>
+                <DataExtRet>
+                    <OwnerID>{0e102412-c367-403d-806f-28b2bea18297}</OwnerID>
+                    <DataExtName>FileID</DataExtName>
+                    <DataExtType>STR255TYPE</DataExtType>
+                    <DataExtValue>{0e102412-c367-403d-806f-28b2bea18297}</DataExtValue>
+                </DataExtRet>
+            </CompanyRet>
+        </CompanyQueryRs>
+        <PreferencesQueryRs requestID="2" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+            <PreferencesRet>
+                <AccountingPreferences>
+                    <IsUsingAccountNumbers>false</IsUsingAccountNumbers>
+                    <IsRequiringAccounts>true</IsRequiringAccounts>
+                    <IsUsingClassTracking>false</IsUsingClassTracking>
+                    <IsUsingAuditTrail>true</IsUsingAuditTrail>
+                    <IsAssigningJournalEntryNumbers>true</IsAssigningJournalEntryNumbers>
+                </AccountingPreferences>
+                <FinanceChargePreferences>
+                    <AnnualInterestRate>0,0</AnnualInterestRate>
+                    <MinFinanceCharge>0,00</MinFinanceCharge>
+                    <GracePeriod>0</GracePeriod>
+                    <IsAssessingForOverdueCharges>false</IsAssessingForOverdueCharges>
+                    <CalculateChargesFrom>DueDate</CalculateChargesFrom>
+                    <IsMarkedToBePrinted>false</IsMarkedToBePrinted>
+                </FinanceChargePreferences>
+                <JobsAndEstimatesPreferences>
+                    <IsUsingEstimates>true</IsUsingEstimates>
+                    <IsUsingProgressInvoicing>false</IsUsingProgressInvoicing>
+                    <IsPrintingItemsWithZeroAmounts>false</IsPrintingItemsWithZeroAmounts>
+                </JobsAndEstimatesPreferences>
+                <MultiCurrencyPreferences>
+                    <IsMultiCurrencyOn>false</IsMultiCurrencyOn>
+                </MultiCurrencyPreferences>
+                <MultiLocationInventoryPreferences>
+                    <IsMultiLocationInventoryAvailable>false</IsMultiLocationInventoryAvailable>
+                    <IsMultiLocationInventoryEnabled>false</IsMultiLocationInventoryEnabled>
+                </MultiLocationInventoryPreferences>
+                <PurchasesAndVendorsPreferences>
+                    <IsUsingInventory>false</IsUsingInventory>
+                    <DaysBillsAreDue>10</DaysBillsAreDue>
+                    <IsAutomaticallyUsingDiscounts>false</IsAutomaticallyUsingDiscounts>
+                </PurchasesAndVendorsPreferences>
+                <ReportsPreferences>
+                    <AgingReportBasis>AgeFromDueDate</AgingReportBasis>
+                    <SummaryReportBasis>Accrual</SummaryReportBasis>
+                </ReportsPreferences>
+                <SalesAndCustomersPreferences>
+                    <IsTrackingReimbursedExpensesAsIncome>false</IsTrackingReimbursedExpensesAsIncome>
+                    <IsAutoApplyingPayments>true</IsAutoApplyingPayments>
+                    <PriceLevels>
+                        <IsUsingPriceLevels>true</IsUsingPriceLevels>
+                        <IsRoundingSalesPriceUp>true</IsRoundingSalesPriceUp>
+                    </PriceLevels>
+                </SalesAndCustomersPreferences>
+                <TimeTrackingPreferences>
+                    <FirstDayOfWeek>Monday</FirstDayOfWeek>
+                </TimeTrackingPreferences>
+                <CurrentAppAccessRights>
+                    <IsAutomaticLoginAllowed>true</IsAutomaticLoginAllowed>
+                    <AutomaticLoginUserName>Admin</AutomaticLoginUserName>
+                    <IsPersonalDataAccessAllowed>false</IsPersonalDataAccessAllowed>
+                </CurrentAppAccessRights>
+                <ItemsAndInventoryPreferences>
+                    <EnhancedInventoryReceivingEnabled>false</EnhancedInventoryReceivingEnabled>
+                    <IsTrackingSerialOrLotNumber>None</IsTrackingSerialOrLotNumber>
+                    <FIFOEnabled>false</FIFOEnabled>
+                    <IsRSBEnabled>false</IsRSBEnabled>
+                    <IsBarcodeEnabled>false</IsBarcodeEnabled>
+                </ItemsAndInventoryPreferences>
+            </PreferencesRet>
+        </PreferencesQueryRs>
+    </QBXMLMsgsRs>
+</QBXML>

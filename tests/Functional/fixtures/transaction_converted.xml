@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<?qbxml version="13.0"?>
+			<QBXML>
+				<QBXMLMsgsRq onError="continueOnError">
+				<JournalEntryAddRq>
+	<JournalEntryAdd>
+		<TxnDate>2018-10-10</TxnDate>
+		<RefNumber>ref1</RefNumber>
+		<CurrencyRef>
+			<FullName>US Dollar</FullName>
+		</CurrencyRef>
+		<ExchangeRate>7.83704</ExchangeRate>
+		<JournalDebitLine>
+			<AccountRef>
+				<FullName>Uncategorized Expenses</FullName>
+			</AccountRef>
+			<Amount>400.00</Amount>
+			<Memo>debit memo</Memo>
+		</JournalDebitLine>
+		<JournalCreditLine>
+			<AccountRef>
+				<FullName>Bank USD</FullName>
+			</AccountRef>
+			<Amount>400.00</Amount>
+			<Memo>credit memo</Memo>
+		</JournalCreditLine>
+	</JournalEntryAdd>
+</JournalEntryAddRq>
+<JournalEntryAddRq>
+	<JournalEntryAdd>
+		<TxnDate>2018-10-10</TxnDate>
+		<RefNumber>ref21</RefNumber>
+		<CurrencyRef>
+			<FullName>US Dollar</FullName>
+		</CurrencyRef>
+		<ExchangeRate>7.83704</ExchangeRate>
+		<JournalDebitLine>
+			<AccountRef>
+				<FullName>Undeposited Funds</FullName>
+			</AccountRef>
+			<Amount>500.00</Amount>
+			<Memo>debit memo</Memo>
+		</JournalDebitLine>
+		<JournalCreditLine>
+			<AccountRef>
+				<FullName>Bank USD</FullName>
+			</AccountRef>
+			<Amount>500.00</Amount>
+			<Memo>credit memo</Memo>
+		</JournalCreditLine>
+	</JournalEntryAdd>
+</JournalEntryAddRq>
+<JournalEntryAddRq>
+	<JournalEntryAdd>
+		<TxnDate>2018-10-10</TxnDate>
+		<RefNumber>ref22</RefNumber>
+		<CurrencyRef>
+			<FullName>Euro</FullName>
+		</CurrencyRef>
+		<ExchangeRate>9.0126</ExchangeRate>
+		<JournalDebitLine>
+			<AccountRef>
+				<FullName>Bank EUR</FullName>
+			</AccountRef>
+			<Amount>433.33</Amount>
+			<Memo>debit memo</Memo>
+		</JournalDebitLine>
+		<JournalCreditLine>
+			<AccountRef>
+				<FullName>Undeposited Funds</FullName>
+			</AccountRef>
+			<Amount>433.33</Amount>
+			<Memo>credit memo</Memo>
+		</JournalCreditLine>
+	</JournalEntryAdd>
+</JournalEntryAddRq>
+
+				</QBXMLMsgsRq>
+            </QBXML>

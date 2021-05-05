@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+			<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+			 xmlns:ns1="http://developer.intuit.com/">
+				<SOAP-ENV:Body><ns1:authenticateResponse><ns1:authenticateResult><ns1:string>{ticketId}</ns1:string>
+<ns1:string></ns1:string>
+</ns1:authenticateResult></ns1:authenticateResponse>
+			</SOAP-ENV:Body>
+			</SOAP-ENV:Envelope>

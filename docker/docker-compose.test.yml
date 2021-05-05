@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  php:
+    image: ${REGISTRY_IMAGE}/app_php_base:${TAG}
+    working_dir: /var/www/app
+    environment:
+      - DATABASE_URL=mysql://dev:dev@mysql:3306/qb_api
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    volumes:
+      - ${APPLICATION}:/var/www/app
+
+  mysql:
+    image: leafney/alpine-mariadb:10.2.22
+    environment:
+      - MYSQL_USER=dev
+      - MYSQL_USER_PWD=dev
+      - MYSQL_USER_DB=qb_api
+    networks:
+      - backend
+
+networks:
+  backend:

@@ -1,0 +1,7 @@
+framework:
+    cache:
+        directory: '%kernel.cache_dir%/pools'
+        app: cache.adapter.filesystem
+        pools:
+            app.cache.currency_rate:
+                adapter: cache.app

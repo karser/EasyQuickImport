@@ -1,0 +1,12 @@
+{
+  "acme1": {
+    "Assets:Current Assets:HDFC Savings": "HDFC HKD Savings",
+    "Income:Interest income": "Interest Income",
+    "Expense:Bank Charges HKD": "Bank Service Charges"
+  },
+  "acme2": {
+    "Assets:Current Assets:Citibank EUR": "Citibank EUR",
+    "Assets:Current Assets:Citibank USD": "Citibank USD",
+    "Expense:Bank Charges USD": "Bank Service Charges"
+  }
+}

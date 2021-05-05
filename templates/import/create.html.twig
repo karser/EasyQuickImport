@@ -1,0 +1,102 @@
+{% extends 'admin.html.twig' %}
+
+{% block content_title %}Create import{% endblock %}
+
+{% block head_custom_stylesheets %}
+    {{ parent() }}
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/craueformflow/css/buttons.css') }}" />
+    <style>
+        .wizard-steps {
+            display: table;   /* Allow the centering to work */
+            margin: 0 auto;
+        }
+        ol.craue_formflow_steplist {
+            list-style-type: decimal;
+            margin-bottom: 0;
+        }
+        ol.craue_formflow_steplist li {
+            float: left;
+            font-size: 22px;
+            margin: 0 20px;
+        }
+        li.craue_formflow_current_step {
+            font-weight: bold;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <section class="content-header">
+            <div class="wizard-steps">
+                {% include '@CraueFormFlow/FormFlow/stepList.html.twig' %}
+            </div>
+        </section>
+        <section id="main" class="content-body">
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+
+            {% for error in errors %}
+                <div class="alert alert-warning" role="alert">{{ error }}</div>
+            {% endfor %}
+
+            {% if flow.getCurrentStepLabel() == 'import_wizard_step.confirmation' %}
+                <div>
+                    Preview<br/>
+                </div>
+                {{ render_preview(entities)|raw }}
+            {% endif %}
+
+            {{ form_rest(form) }}
+
+            <div class="form-actions">
+                {% include '@CraueFormFlow/FormFlow/buttons.html.twig' with {
+                    craue_formflow_button_label_next: 'Next',
+                    craue_formflow_button_label_back: 'Back',
+                    craue_formflow_button_label_finish: 'Schedule import',
+                    craue_formflow_button_class_last: 'btn btn-primary',
+                    craue_formflow_button_class_back: 'btn',
+                    craue_formflow_button_render_reset: 0,
+                } %}
+            </div>
+            {{ form_end(form) }}
+        </section>
+    </div>
+{% endblock %}
+
+
+{% block body_custom_javascript %}
+    {{ parent() }}
+    <script>
+        (function(importTypeSel) {
+            const button = new DownloadSampleButton(importTypeSel);
+            bindEvents();
+
+            function bindEvents() {
+                $(importTypeSel).change((event) => updateButton(event.target.value));
+                updateButton($(importTypeSel).val());
+            }
+
+            function updateButton(importType) {
+                if (!!importType) {
+                    button.enable();
+                    button.setHref(`/import/${importType}/sample`);
+                } else {
+                    button.setHref('javascript:void(0);');
+                    button.disable();
+                }
+            }
+
+            function DownloadSampleButton(importTypeSel) {
+                const selector = '#download-sample-button';
+                $(importTypeSel).after('<br><a id="download-sample-button" class="btn btn-primary" href="javascript:void(0);">Download Sample</a>');
+
+                return {
+                    disable: () => $(selector).addClass("disabled"),
+                    enable: () => $(selector).removeClass("disabled"),
+                    setHref: (href) => $(selector).attr("href", href),
+                };
+            }
+        })('#importUpload_importType');
+    </script>
+{% endblock %}

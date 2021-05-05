@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+			<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+			 xmlns:ns1="http://developer.intuit.com/">
+				<SOAP-ENV:Body><ns1:closeConnectionResponse><ns1:closeConnectionResult>Complete!</ns1:closeConnectionResult></ns1:closeConnectionResponse>
+			</SOAP-ENV:Body>
+			</SOAP-ENV:Envelope>

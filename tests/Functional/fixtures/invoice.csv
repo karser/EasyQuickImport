@@ -1,0 +1,2 @@
+refNumber,invoiceMemo,arAccount,txnDate,exchangeRate,line1ItemName,line1Desc,line1Quantity,line1Amount,line1Rate,customerFullName,firstName,lastName,companyName,terms,currency,addr1,addr2,city,state,postalcode,country
+180510-0001,"Invoice memo","Accounts Receivable - USD",2018-05-10,7.83126,Consulting,"Item desc",1,10.00,,HomeBase,Long,Allen,"HomeBase LLC","Due on receipt","US Dollar","4420 Shadowmar Drive",Louisiana,"New Orleans",LA,70112,"United States"

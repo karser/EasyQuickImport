@@ -1,0 +1,12 @@
+# Read the documentation: https://github.com/1up-lab/OneupFlysystemBundle/tree/master/Resources/doc/index.md
+oneup_flysystem:
+    adapters:
+        sheet_adapter:
+            local:
+                directory: '%kernel.project_dir%/var/flysystem'
+    filesystems:
+        sheet:
+            adapter: sheet_adapter
+            alias: League\Flysystem\FilesystemInterface
+            plugins:
+                - 'oneup_flysystem.plugin.list_files'

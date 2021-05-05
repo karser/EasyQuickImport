@@ -1,0 +1,54 @@
+version: '3.4'
+
+services:
+  php:
+    image: ${REGISTRY_IMAGE}/app_php:${TAG}
+    env_file:
+      - .app_env
+    extra_hosts:
+      - 'db:${DATABASE_HOST}'
+    healthcheck:
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 30s
+    networks:
+      - backend
+    restart: unless-stopped
+    deploy:
+      replicas: 1
+      update_config:
+        order: start-first
+      placement:
+        constraints:
+          - node.role == manager
+
+  nginx:
+    image: ${REGISTRY_IMAGE}/app_nginx:${TAG}
+    depends_on:
+      - php
+#    ports:
+#      - '8083:80'
+    networks:
+      - backend
+      - webproxy
+    restart: unless-stopped
+    labels: &nginx_labels
+      - "traefik.backend=easyquickimport-${ENVIRONMENT}-nginx"
+      - "traefik.docker.network=webproxy"
+      - "traefik.frontend.rule=Host:${VIRTUAL_HOST}"
+      - "traefik.enable=true"
+      - "traefik.port=80"
+    deploy:
+      replicas: 1
+      update_config:
+        order: start-first
+      placement:
+        constraints:
+          - node.role == manager
+      labels: *nginx_labels
+
+networks:
+  backend:
+  webproxy:
+    external: true

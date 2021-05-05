@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <authenticate xmlns="http://developer.intuit.com/">
+            <strUserName>quickbooks</strUserName>
+            <strPassword>FE7XjHVzjfdH</strPassword>
+        </authenticate>
+    </soap:Body>
+</soap:Envelope>

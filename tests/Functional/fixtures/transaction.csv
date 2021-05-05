@@ -1,0 +1,4 @@
+txnDate,refNumber,currency,exchangeRate,creditAccount,creditMemo,creditAmount,debitAccount,debitMemo,debitAmount
+2018-10-10,ref1,"US Dollar",7.83704,"Bank USD","credit memo",400.00,"Uncategorized Expenses","debit memo",400.00
+2018-10-10,ref21,"US Dollar",7.83704,"Bank USD","credit memo",500.00,"Undeposited Funds","debit memo",500.00
+2018-10-10,ref22,Euro,9.0126,"Undeposited Funds","credit memo",433.33,"Bank EUR","debit memo",433.33

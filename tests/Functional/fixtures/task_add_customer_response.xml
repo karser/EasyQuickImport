@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+			<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+			 xmlns:ns1="http://developer.intuit.com/">
+				<SOAP-ENV:Body><ns1:sendRequestXMLResponse><ns1:sendRequestXMLResult>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+			&lt;?qbxml version=&quot;13.0&quot;?&gt;
+			&lt;QBXML&gt;
+				&lt;QBXMLMsgsRq onError=&quot;continueOnError&quot;&gt;
+				&lt;CustomerAddRq requestID=&quot;1&quot;&gt;
+	&lt;CustomerAdd&gt;
+		&lt;Name&gt;Acme Inc.&lt;/Name&gt;
+		&lt;CompanyName&gt;Acme Inc.&lt;/CompanyName&gt;
+		&lt;FirstName&gt;John&lt;/FirstName&gt;
+		&lt;LastName&gt;Tulchin&lt;/LastName&gt;
+		&lt;BillAddress&gt;
+			&lt;Addr1&gt;56 Cowles Road&lt;/Addr1&gt;
+			&lt;City&gt;Willington&lt;/City&gt;
+			&lt;State&gt;CT&lt;/State&gt;
+			&lt;PostalCode&gt;06279&lt;/PostalCode&gt;
+			&lt;Country&gt;United States&lt;/Country&gt;
+		&lt;/BillAddress&gt;
+		&lt;CurrencyRef&gt;
+			&lt;FullName&gt;US Dollar&lt;/FullName&gt;
+		&lt;/CurrencyRef&gt;
+	&lt;/CustomerAdd&gt;
+&lt;/CustomerAddRq&gt;
+
+				&lt;/QBXMLMsgsRq&gt;
+            &lt;/QBXML&gt;</ns1:sendRequestXMLResult></ns1:sendRequestXMLResponse>
+			</SOAP-ENV:Body>
+			</SOAP-ENV:Envelope>

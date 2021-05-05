@@ -1,0 +1,18 @@
+includes:
+    - vendor/phpstan/phpstan-doctrine/extension.neon
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+    - vendor/phpstan/phpstan-webmozart-assert/extension.neon
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+
+parameters:
+    level: 3
+    reportUnmatchedIgnoredErrors: false
+    inferPrivatePropertyTypeFromConstructor: true
+    paths:
+        - %currentWorkingDirectory%/tests
+    symfony:
+        container_xml_path: %rootDir%/../../../var/cache/test/srcApp_KernelTestDebugContainer.xml
+    autoload_files:
+      - vendor/bin/.phpunit/phpunit-7.4/vendor/autoload.php

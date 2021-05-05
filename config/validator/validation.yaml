@@ -1,0 +1,136 @@
+App\SheetScheduler\CustomerInvoice:
+    constraints:
+        - Callback: validateQuantity
+    properties:
+        refNumber:
+            - Length: { max: 11 }
+        invoiceMemo:
+            - Length: { max: 4095  }
+        arAccount:
+            - Length: { max: 159  }
+        txnDate:
+            - Date: ~
+        exchangeRate:
+            - Regex: { pattern: '/^\d+(\.\d+)?/' } #float
+        line1ItemName:
+            - NotBlank: ~
+        line1Desc:
+            - Length: { max: 4095  }
+        line1Quantity:
+            - Regex: { pattern: '/^\d+(\.\d+)?/' } #float
+        line1Amount:
+            - Regex: { pattern: '/^\d+(\.\d+)?/' } #float
+        line1Rate:
+            - Regex: { pattern: '/^\d+(\.\d+)?/' } #float
+
+App\SheetScheduler\Customer:
+    properties:
+        customerFullName:
+            - Length: { max: 159 }
+        firstName:
+            - Length: { max: 25 }
+        lastName:
+            - Length: { max: 25 }
+        companyName:
+            - Length: { max: 41 }
+        terms:
+            - Length: { max: 31 }
+        currency:
+            - Length: { max: 64 }
+        addr1:
+            - Length: { max: 41 }
+        addr2:
+            - Length: { max: 41 }
+        city:
+            - Length: { max: 31 }
+        state:
+            - Length: { max: 21 }
+        postalcode:
+            - Length: { max: 13 }
+        country:
+            - Length: { max: 31 }
+
+App\SheetScheduler\VendorBill:
+    properties:
+        memo:
+            - Length: { max: 4095 }
+        apAccount:
+            - Length: { max: 159 }
+        refNumber:
+            - Length: { max: 20 }
+        txnDate:
+            - Date: ~
+        exchangeRate:
+            - Regex: { pattern: '/^\d+(\.\d+)?/' } #float
+        line1AccountFullName:
+            - Length: { max: 159 }
+        line1Amount:
+            - Regex: { pattern: '/^\d+(\.\d+)?/' } #float
+        line1Memo:
+            - Length: { max: 4095 }
+        line2AccountFullName:
+            - Length: { max: 159 }
+        line2Amount:
+            - Regex: { pattern: '/^\d+(\.\d+)?/' } #float
+        line2Memo:
+            - Length: { max: 4095 }
+
+App\SheetScheduler\Vendor:
+    properties:
+        vendorFullname:
+            - Length: { max: 159 }
+        vendorCompanyName:
+            - Length: { max: 41 }
+        addr1:
+            - Length: { max: 41 }
+        addr2:
+            - Length: { max: 41 }
+        city:
+            - Length: { max: 31 }
+        state:
+            - Length: { max: 21 }
+        postalcode:
+            - Length: { max: 13 }
+        country:
+            - Length: { max: 31 }
+        vendorType:
+            - Length: { max: 159 }
+        terms:
+            - Length: { max: 31 }
+        currency:
+            - Length: { max: 64 }
+
+App\SheetScheduler\Transaction:
+    properties:
+        exchangeRate:
+            - Regex: { pattern: '/^\d+(\.\d+)?/' } #float
+        currency:
+            - Length: { max: 64 }
+        refNumber:
+            - Length: { max: 11 }
+        txnDate:
+            - Date: ~
+        creditAccount:
+            - Length: { max: 159 }
+        creditMemo:
+            - Length: { max: 4095  }
+        creditAmount:
+            - Regex: { pattern: '/^\d+(\.\d+)?/' } #float
+        debitAccount:
+            - Length: { max: 159 }
+        debitMemo:
+            - Length: { max: 4095  }
+        debitAmount:
+            - Regex: { pattern: '/^\d+(\.\d+)?/' } #float
+
+App\Entity\QuickbooksCompany:
+    properties:
+        qbUsername:
+            - NotBlank: ~
+        qbPassword:
+            - NotBlank: ~
+        qbCompanyFile:
+            - Regex: { pattern: '/^.*\.qbw$/i' }
+        baseCurrency:
+            - Length: { max: 3 }
+            - Currency: ~

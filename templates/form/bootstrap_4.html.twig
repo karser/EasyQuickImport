@@ -1,0 +1,64 @@
+{% use 'bootstrap_4_layout.html.twig' %}
+
+{# copied from vendor/easycorp/easyadmin-bundle/src/Resources/views/form/bootstrap_4.html.twig #}
+{% block form_row -%}
+    {% set _field_type = easyadmin.field.fieldType|default('default') %}
+    <div class="form-group {% if (not compound or force_error|default(false)) and not valid %}has-error{% endif %} field-{{ block_prefixes|slice(-2)|first }}">
+        {{- form_label(form) -}}
+        <div class="form-widget">
+            {% set has_prepend_html = easyadmin.field.prepend_html|default(null) is not null %}
+            {% set has_append_html = easyadmin.field.append_html|default(null) is not null %}
+            {% set has_input_groups = has_prepend_html or has_append_html %}
+
+            {% if has_input_groups %}<div class="input-group">{% endif %}
+                {% if has_prepend_html %}
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">{{ easyadmin.field.prepend_html|raw }}</span>
+                    </div>
+                {% endif %}
+
+                {{- form_widget(form) -}}
+
+                {% if has_append_html %}
+                    <div class="input-group-append">
+                        <span class="input-group-text">{{ easyadmin.field.append_html|raw }}</span>
+                    </div>
+                {% endif %}
+                {% if has_input_groups %}</div>{% endif %}
+
+            {% if _field_type in ['datetime', 'datetime_immutable', 'date', 'date_immutable', 'dateinterval', 'time', 'time_immutable', 'birthday'] and easyadmin.field.nullable|default(false) %}
+                <div class="nullable-control">
+                    <label>
+                        <input type="checkbox" {% if data is null %}checked="checked"{% endif %}>
+                        {{ 'label.nullable_field'|trans({}, 'EasyAdminBundle')}}
+                    </label>
+                </div>
+            {% endif %}
+
+            {% if easyadmin.field.help|default(form.vars.help) != '' %}
+                <small class="form-help">{{ easyadmin.field.help|default(form.vars.help)|trans(domain = form.vars.translation_domain)|raw }}</small>
+            {% endif %}
+
+            {{- form_errors(form) -}}
+        </div>
+    </div>
+{%- endblock form_row %}
+
+{# copied from vendor/easycorp/easyadmin-bundle/src/Resources/views/form/bootstrap_4.html.twig #}
+{% block file_widget -%}
+    {% if vich|default(false) %}
+        {%- set type = type|default('file') -%}
+        {{- block('form_widget_simple') -}}
+    {% else %}
+        {{- parent() -}}
+
+        <script>
+            document.querySelector('#{{ id }}').addEventListener('change', function() {
+                const fileName = this.value.replace('C:\\fakepath\\', '');
+                const customInputFileLabel = document.querySelector('#{{ id }} ~ .custom-file-label');
+                customInputFileLabel.classList.add('selected');
+                customInputFileLabel.innerHTML = fileName;
+            });
+        </script>
+    {% endif %}
+{%- endblock %}

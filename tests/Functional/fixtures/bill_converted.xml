@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<?qbxml version="13.0"?>
+			<QBXML>
+				<QBXMLMsgsRq onError="continueOnError">
+				<VendorAddRq>
+	<VendorAdd>
+		<Name>Silo</Name>
+		<CompanyName>Silo LIMITED</CompanyName>
+		<VendorAddress>
+			<Addr1>68 Tap Kwok Nam Path</Addr1>
+			<Addr2>Lok Sheuk Tsan</Addr2>
+			<City>Hong Kong</City>
+			<State>HK</State>
+			<PostalCode>999077</PostalCode>
+			<Country>Hong Kong</Country>
+		</VendorAddress>
+		<VendorTypeRef>
+			<FullName>Service Providers</FullName>
+		</VendorTypeRef>
+		<TermsRef>
+			<FullName>Due on receipt</FullName>
+		</TermsRef>
+		<CurrencyRef>
+			<FullName>Hong Kong Dollar</FullName>
+		</CurrencyRef>
+	</VendorAdd>
+</VendorAddRq>
+<BillAddRq>
+	<BillAdd>
+		<VendorRef>
+			<FullName>Silo</FullName>
+		</VendorRef>
+		<APAccountRef>
+			<FullName>Accounts Payable</FullName>
+		</APAccountRef>
+		<TxnDate>2018-05-10</TxnDate>
+		<RefNumber>2018-05-10-0001</RefNumber>
+		<TermsRef>
+			<FullName>Due on receipt</FullName>
+		</TermsRef>
+		<Memo>Bill Memo</Memo>
+		<ExchangeRate>1</ExchangeRate>
+		<ExpenseLineAdd>
+			<AccountRef>
+				<FullName>Rent Expense</FullName>
+			</AccountRef>
+			<Amount>10.00</Amount>
+			<Memo>Item Memo</Memo>
+		</ExpenseLineAdd>
+	</BillAdd>
+</BillAddRq>
+
+				</QBXMLMsgsRq>
+            </QBXML>

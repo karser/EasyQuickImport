@@ -1,0 +1,78 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    'env(APP_NAME)': 'Easy Quick Import'
+    'env(PROJECT_URL)': 'https://%env(DOMAIN)%'
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            string $projectUrl: '%env(PROJECT_URL)%'
+            string $appName: '%env(APP_NAME)%'
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+
+#    QuickBooks_WebConnector_QWC:
+#        class: 'QuickBooks_WebConnector_QWC'
+#        arguments:
+#            $name: 'QB Connector'
+#            $descrip: 'QB Connector'
+#            $appurl: '%env(PROJECT_URL)%/qbwc?XDEBUG_SESSION_START=1'
+#            $appsupport: '%env(PROJECT_URL)%/qbwc'
+#            $username: '%env(QB_USER)%'
+#            $fileid: '%env(QB_FILE_ID)%'
+#            $ownerid: '%env(QB_OWNER_ID)%'
+#            $run_every_n_seconds: 600
+
+
+    App\Entity\QuickbooksAccountRepositoryInterface: '@App\Repository\QuickbooksAccountRepository'
+
+    App\TransactionsConverter:
+        arguments:
+            $encoder: '@serializer.encoder.csv'
+            $accountsMappingPath: '%kernel.project_dir%/config/accounts_mapping.json'
+
+    App\QuickbooksServer:
+        arguments:
+            $dsn: '%env(resolve:DATABASE_URL)%'
+
+    App\SheetScheduler\Transformer\VendorTransformer:
+        tags: ['entity.transformer']
+
+    App\SheetScheduler\Transformer\VendorBillTransformer:
+        tags: ['entity.transformer']
+
+    App\SheetScheduler\Transformer\CustomerTransformer:
+        tags: ['entity.transformer']
+
+    App\SheetScheduler\Transformer\CustomerInvoiceTransformer:
+        tags: ['entity.transformer']
+
+    App\SheetScheduler\Transformer\TransactionTransformer:
+        tags: ['entity.transformer']
+
+    App\Currency\CurrencyExchangerInterface: '@App\Currency\CachedCurrencyExchanger'
+
+    Symfony\Component\Mime\Address:
+        arguments: ['contact@easyquickimport.com', 'EasyQuickImport']
+
+    App\Entity\QuickbooksCompanyRepositoryInterface: '@App\Repository\QuickbooksCompanyRepository'

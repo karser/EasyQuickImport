@@ -1,0 +1,76 @@
+{% extends 'admin.html.twig' %}
+
+{% form_theme schedule_form with easyadmin_config('design.form_theme') %}
+{% form_theme sample_form with easyadmin_config('design.form_theme') %}
+{% form_theme truncate_form with easyadmin_config('design.form_theme') %}
+{% form_theme converter_form with easyadmin_config('design.form_theme') %}
+
+{% block content_title %}Scheduling{% endblock %}
+
+{% block content %}
+<div class="content">
+
+    <div class="row">
+        <div class="col">
+            <section class="content-header ">
+                <div class="d-flex flex-row justify-content-between align-content-center w-100">
+                    <div class="content-header-title">
+                        <h1 class="title">Schedule a sheet</h1>
+                    </div>
+
+                    <div class="global-actions"></div>
+                </div>
+            </section>
+            <section id="main" class="content-body">
+                {{ form(schedule_form) }}
+            </section>
+        </div>
+
+        <div class="col">
+            <section class="content-header ">
+                <div class="d-flex flex-row justify-content-between align-content-center w-100">
+                    <div class="content-header-title">
+                        <h1 class="title">Download a sample sheet</h1>
+                    </div>
+
+                    <div class="global-actions"></div>
+                </div>
+            </section>
+            <section id="main" class="content-body">
+                {{ form(sample_form) }}
+            </section>
+        </div>
+
+        <div class="col">
+            <section class="content-header ">
+                <div class="d-flex flex-row justify-content-between align-content-center w-100">
+                    <div class="content-header-title">
+                        <h1 class="title">Convert gnucash to csv</h1>
+                    </div>
+
+                    <div class="global-actions"></div>
+                </div>
+            </section>
+            <section id="main" class="content-body">
+                {{ form(converter_form) }}
+            </section>
+        </div>
+
+        <div class="col">
+            <section class="content-header ">
+                <div class="d-flex flex-row justify-content-between align-content-center w-100">
+                    <div class="content-header-title">
+                        <h1 class="title">Truncate queue</h1>
+                    </div>
+
+                    <div class="global-actions"></div>
+                </div>
+            </section>
+            <section id="main" class="content-body">
+                {{ form(truncate_form) }}
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

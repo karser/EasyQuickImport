@@ -1,0 +1,31 @@
+# Read the documentation: https://github.com/1up-lab/OneupFlysystemBundle/tree/master/Resources/doc/index.md
+oneup_flysystem:
+    adapters:
+        sheet_adapter:
+            local:
+                directory: '%kernel.project_dir%/var/flysystem'
+    filesystems:
+        sheet:
+            adapter: sheet_adapter
+            alias: League\Flysystem\FilesystemInterface
+            plugins:
+                - 'oneup_flysystem.plugin.list_files'
+
+#oneup_flysystem:
+#    adapters:
+#        sheet_adapter:
+#            webdav:
+#                client: app.webdav_client
+#                prefix: '%env(resolve:WEBDAV_PATH)%'
+#    filesystems:
+#        sheet:
+#            adapter: sheet_adapter
+#            alias: League\Flysystem\FilesystemInterface
+#            plugins:
+#                - 'oneup_flysystem.plugin.list_files'
+#
+#services:
+#    app.webdav_client:
+#        class: Sabre\DAV\Client
+#        arguments:
+#          - { baseUri: '%env(resolve:WEBDAV_URL)%', userName: '%env(resolve:WEBDAV_USERNAME)%', password: '%env(resolve:WEBDAV_PASSWORD)%' }

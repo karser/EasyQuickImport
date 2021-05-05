@@ -1,0 +1,80 @@
+#ENV variables: https://docs.gitlab.com/ce/ci/variables/
+image: karser/docker-compose-ci
+
+stages:
+  - test
+  - build
+  - deploy
+
+before_script:
+  - docker -v && docker-compose -v
+
+test dev:
+  stage: test
+  only:
+    refs:
+      - branches
+  variables:
+    COMPOSE_PROJECT_NAME: "easyquickimport_test${CI_JOB_ID}"
+    DOCKER_ENV: test
+    APP_ENV: test
+  script:
+    - cd docker
+    - bin/copy-env.sh
+    - bin/build.sh
+    - docker-compose run --rm php sh -c "bin/run-tests.sh"
+  after_script:
+    - cd docker
+    - docker-compose down --remove-orphans
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+      - var/log
+
+build image:
+  stage: build
+  variables:
+    DOCKER_ENV: prod
+    APP_ENV: prod
+  script:
+    - cd docker
+    - bin/copy-env.sh
+    - bin/build.sh
+    - bin/push.sh
+
+deploy prod:
+  stage: deploy
+  environment:
+    name: easyquickimport-prod
+    url: https://app.easyquickimport.com/
+  only:
+    - tags
+    - branches
+  when: manual
+  variables:
+    DOCKER_ENV: prod
+    ENVIRONMENT: prod
+    APP_ENV: prod
+    COMPOSE_PROJECT_NAME: easyquickimport
+    VIRTUAL_HOST: app.easyquickimport.com
+    DATABASE_HOST: ${HZ4_DB_HOST}
+    MAILER_DSN: ${PROD_MAILER_DSN}
+    DATABASE_URL: ${PROD_DATABASE_URL}
+    # connect to the server
+    DOCKER_TLS_VERIFY: "1"
+    DOCKER_HOST: $HZ4_DOCKER_HOST
+    DOCKER_CERT_PATH: "/tmp/certs"
+  before_script:
+    - mkdir -p $DOCKER_CERT_PATH
+    - echo "$HZ4_CA" > $DOCKER_CERT_PATH/ca.pem
+    - echo "$HZ4_CLIENT_CERT" > $DOCKER_CERT_PATH/cert.pem
+    - echo "$HZ4_CLIENT_KEY" > $DOCKER_CERT_PATH/key.pem
+    - ls -alh $DOCKER_CERT_PATH
+    - echo ${CI_REGISTRY_PASSWORD} | docker login ${CI_REGISTRY} -u ${CI_REGISTRY_USER} --password-stdin
+  script:
+    - cd docker
+    - bin/copy-env.sh
+    - docker-compose config | docker stack deploy --with-registry-auth -c - ${COMPOSE_PROJECT_NAME}
+  after_script:
+    - rm -rf $DOCKER_CERT_PATH

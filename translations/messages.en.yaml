@@ -1,0 +1,4 @@
+# wizard buttons
+import_wizard_step.upload: Upload
+import_wizard_step.mapping: Mapping
+import_wizard_step.confirmation: Confirmation

@@ -1,0 +1,45 @@
+app_homepage:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /import/create
+
+app_logout:
+    path: /logout
+    methods: GET
+
+app_admin_download_qbwc_config:
+    path: /download-qbwc-config
+    controller: App\Controller\AdminController::downloadQbwcConfigAction
+
+app_qbwc_server:
+    path: /qbwc
+    controller: App\Controller\QbwcController::server
+
+app_documentation:
+    path: /documentation
+    controller: App\Controller\DocumentationController::index
+
+app_schedule:
+    path: /scheduling/schedule
+    controller: App\Controller\SchedulingController::schedule
+
+app_schedule_accounts:
+    path: /scheduling/accounts
+    controller: App\Controller\SchedulingController::scheduleAccounts
+
+app_test_schedule:
+    path: /scheduling/test-schedule
+    controller: App\Controller\SchedulingController::testSchedule
+
+app_import_create:
+    path: /import/create
+    controller: App\Controller\ImportController::create
+
+app_import_sample:
+    path: /import/{type}/sample
+    controller: App\Controller\ImportController::sample
+
+app_import_scheduled:
+    path: /import/scheduled
+    controller: App\Controller\ImportController::scheduled

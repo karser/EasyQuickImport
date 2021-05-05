@@ -1,0 +1,2 @@
+memo,apAccount,refNumber,txnDate,line1AccountFullName,line1Amount,line1Memo,exchangeRate,vendorFullname,vendorCompanyName,addr1,addr2,vendorType,terms,currency,city,state,postalcode,country
+"Bill Memo","Accounts Payable",2018-05-10-0001,2018-05-10,"Rent Expense",10.00,"Item Memo",1,Silo,"Silo LIMITED","68 Tap Kwok Nam Path","Lok Sheuk Tsan","Service Providers","Due on receipt","Hong Kong Dollar","Hong Kong",HK,999077,"Hong Kong"

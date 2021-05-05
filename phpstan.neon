@@ -1,0 +1,22 @@
+includes:
+    - vendor/phpstan/phpstan-doctrine/extension.neon
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+    - vendor/phpstan/phpstan-webmozart-assert/extension.neon
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+
+parameters:
+    level: 8
+    reportUnmatchedIgnoredErrors: false
+    inferPrivatePropertyTypeFromConstructor: true
+    checkMissingIterableValueType: false
+    paths:
+        - %currentWorkingDirectory%/src
+    ignoreErrors:
+        - '#Parameter \#\d \$\w+ of method QuickBooks_QBXML_Object#'
+
+    excludes_analyse:
+        - %currentWorkingDirectory%/src/Migrations/*
+
+    symfony:
+        container_xml_path: %rootDir%/../../../var/cache/dev/srcApp_KernelDevDebugContainer.xml

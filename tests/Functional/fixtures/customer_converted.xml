@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<?qbxml version="13.0"?>
+			<QBXML>
+				<QBXMLMsgsRq onError="continueOnError">
+				<CustomerAddRq>
+	<CustomerAdd>
+		<Name>HomeBase</Name>
+		<CompanyName>HomeBase LLC</CompanyName>
+		<FirstName>Long</FirstName>
+		<LastName>Allen</LastName>
+		<BillAddress>
+			<Addr1>Attn: Long Allen</Addr1>
+			<Addr2>HomeBase LLC</Addr2>
+			<Addr3>4420 Shadowmar Drive</Addr3>
+			<Addr4>Louisiana</Addr4>
+			<City>New Orleans</City>
+			<State>LA</State>
+			<PostalCode>70112</PostalCode>
+			<Country>United States</Country>
+		</BillAddress>
+		<TermsRef>
+			<FullName>Due on receipt</FullName>
+		</TermsRef>
+		<CurrencyRef>
+			<FullName>US Dollar</FullName>
+		</CurrencyRef>
+	</CustomerAdd>
+</CustomerAddRq>
+
+				</QBXMLMsgsRq>
+            </QBXML>
